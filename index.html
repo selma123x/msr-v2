@@ -279,6 +279,17 @@ footer { background: #111; padding: 40px 28px 24px; }
   .contact-grid { grid-template-columns: 1fr; }
   .why-item { grid-template-columns: 1fr; gap: 4px; }
 }
+
+/* QUOTE SECTION */
+.quote-section { background: #fff; }
+.quote-inner {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 48px; align-items: start;
+}
+@media (max-width: 640px) {
+  .quote-inner { grid-template-columns: 1fr; }
+}
+
 </style>
 </head>
 <body>
@@ -317,6 +328,28 @@ footer { background: #111; padding: 40px 28px 24px; }
     <div class="stat"><div class="stat-n">500+</div><div class="stat-l">Projects completed</div></div>
     <div class="stat"><div class="stat-n">10+</div><div class="stat-l">Years experience</div></div>
     <div class="stat"><div class="stat-n">24/7</div><div class="stat-l">Emergency call-out</div></div>
+  </div>
+</section>
+
+
+<section class="section quote-section" id="quote">
+  <span class="eyebrow">Free Survey</span>
+  <hr class="rule"/>
+  <div class="quote-inner">
+    <div class="quote-left">
+      <h2 class="section-title">Get a free quote.<br>No obligation.</h2>
+      <p class="body-text">Tell us about your roof and we'll arrange a free site visit anywhere across Greater London. No call-out charge.</p>
+    </div>
+    <div class="quote-right">
+      <form class="c-form" action="https://formspree.io/f/xrewljba" method="POST" id="quoteform">
+        <input type="text" name="name" placeholder="Your name"/>
+        <input type="email" name="email" placeholder="Email address"/>
+        <input type="tel" name="phone" placeholder="Phone number"/>
+        <textarea name="message" placeholder="Tell us about your roof..."></textarea>
+        <button type="submit">Send Enquiry</button>
+      </form>
+      <div class="form-ok" id="quoteok">Thank you — we'll be in touch within 24 hours.</div>
+    </div>
   </div>
 </section>
 
@@ -447,6 +480,24 @@ footer { background: #111; padding: 40px 28px 24px; }
 </div>
 
 <script>
+const quoteform = document.getElementById('quoteform');
+if (quoteform) {
+  quoteform.addEventListener('submit', async e => {
+    e.preventDefault();
+    const btn = quoteform.querySelector('button');
+    btn.textContent = 'Sending...'; btn.disabled = true;
+    const res = await fetch(quoteform.action, {
+      method: 'POST', body: new FormData(quoteform),
+      headers: {'Accept': 'application/json'}
+    });
+    if (res.ok) {
+      quoteform.style.display = 'none';
+      document.getElementById('quoteok').style.display = 'block';
+    } else {
+      btn.textContent = 'Send Enquiry'; btn.disabled = false;
+    }
+  });
+}
 const form = document.getElementById('v2form');
 if (form) {
   form.addEventListener('submit', async e => {
