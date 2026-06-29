@@ -290,6 +290,27 @@ footer { background: #111; padding: 40px 28px 24px; }
   .quote-inner { grid-template-columns: 1fr; }
 }
 
+
+.footer-social {
+  display: flex; gap: 24px; margin-top: 28px;
+  padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.07);
+}
+.footer-social a {
+  display: flex; align-items: center; gap: 8px;
+  color: rgba(255,255,255,0.35); text-decoration: none;
+  font-size: 0.72rem; letter-spacing: 0.06em;
+  transition: color 0.2s;
+}
+.footer-social a:hover { color: #CC1F1F; }
+.footer-social svg {
+  width: 18px; height: 18px;
+  fill: none; stroke: currentColor;
+  stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+  flex-shrink: 0;
+}
+.footer-social a[aria-label="WhatsApp"] svg { fill: currentColor; stroke: none; }
+.footer-social a[aria-label="Facebook"] svg { fill: currentColor; stroke: none; }
+
 </style>
 </head>
 <body>
@@ -460,6 +481,20 @@ footer { background: #111; padding: 40px 28px 24px; }
       <a href="#why">Why Us</a>
       <a href="#contact">Contact</a>
     </div>
+  </div>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/master_roofsolutions" target="_blank" aria-label="Instagram">
+      <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      Instagram
+    </a>
+    <a href="https://www.facebook.com/masterroofsolutions" target="_blank" aria-label="Facebook">
+      <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      Facebook
+    </a>
+    <a href="https://wa.me/447533442466" target="_blank" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.428a.5.5 0 0 0 .61.61l5.627-1.476A11.955 11.955 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+      WhatsApp
+    </a>
   </div>
   <div class="footer-copy">© 2024 Master Roof Solutions Ltd. Harrow, London.</div>
 </footer>
