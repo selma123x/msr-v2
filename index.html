@@ -13,7 +13,8 @@ body {
   font-family: 'DM Sans', sans-serif;
   background: #F2F0EB;
   color: #111;
-  padding-bottom: 64px;
+  padding-bottom: 56px;
+  margin: 0;
 }
 
 /* ── NAV ── */
@@ -22,8 +23,8 @@ nav {
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 28px;
   height: 56px;
-  background: rgba(17,17,17,0.92);
-  backdrop-filter: blur(8px);
+  background: #111;
+  backdrop-filter: none;
 }
 .nav-logo {
   display: flex; align-items: center; gap: 12px;
@@ -62,7 +63,10 @@ nav {
 }
 .hero-img {
   position: absolute; inset: 0;
-  background: url('https://raw.githubusercontent.com/selma123x/msr-v2/main/images/hero.jpg') center/cover no-repeat;
+  background-color: #1a1a1a;
+  background-image: url('https://raw.githubusercontent.com/selma123x/msr-v2/main/images/hero.jpg');
+  background-size: cover;
+  background-position: center;
   transform-origin: center;
 }
 .hero-gradient {
